@@ -1,1 +1,7 @@
+Weekly Updates
 
+Tuesday 5/05/2020
+- Created Github
+- Started App Development
+- Started hiscore API
+- Started App Icon/Logo
