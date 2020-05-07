@@ -1,3 +1,17 @@
 <resources>
+    <!-- General app strings. -->
     <string name="app_name">OSRSComrade</string>
+    <string name="logo">OSRS Comrade Logo</string>
+    <string name="version">Version :&#160;</string>
+    <!-- End general app strings. -->
+
+    <!-- mainScreen strings. -->
+    <string name="main_header">OSRS Comrade</string>
+    <string name="price">GE TRACKER</string>
+    <string name="stats">HISCORES</string>
+    <string name="wiki">OSRS WIKI</string>
+    <string name="news">OSRS NEWS</string>
+    <string name="farm">FARM TIMERS</string>
+    <string name="notes">NOTES</string>
+    <!-- End mainScreen strings. -->
 </resources>
