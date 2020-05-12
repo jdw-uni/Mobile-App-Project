@@ -3,5 +3,23 @@ Weekly Updates
 Tuesday 5/05/2020
 - Created Github
 - Started App Development
-- Started hiscore API
+- Started Hiscore API
 - Started App Icon/Logo
+
+Wednesday 6/05/2020
+- Added Project files
+
+
+Thursday 7/05/2020
+- Added App Icon to raw_sources/ and App
+- Finished mockup Main Menu
+
+
+Monday 11/05/2020
+- Added Twitter integration (@OldSchoolRS)
+- Added Old School Runescape News
+- Fixed App Icon location and size
+
+
+
+

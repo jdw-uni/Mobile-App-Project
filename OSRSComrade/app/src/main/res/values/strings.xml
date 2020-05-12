@@ -1,8 +1,9 @@
 <resources>
     <!-- General app strings. -->
-    <string name="app_name">OSRSComrade</string>
+    <string name="app_name">OSRS Comrade</string>
     <string name="logo">OSRS Comrade Logo</string>
     <string name="version">Version :&#160;</string>
+    <string name="no_tweets">No Tweets</string>
     <!-- End general app strings. -->
 
     <!-- mainScreen strings. -->
@@ -14,4 +15,13 @@
     <string name="farm">FARM TIMERS</string>
     <string name="notes">NOTES</string>
     <!-- End mainScreen strings. -->
+
+
+    <!-- string array for Twitter items -->
+    <string-array name="tab_items">
+        <item>TWITTER</item>
+        <item>NEWS</item>
+    </string-array>
+    <!-- End string array for Twitter items -->
+
 </resources>

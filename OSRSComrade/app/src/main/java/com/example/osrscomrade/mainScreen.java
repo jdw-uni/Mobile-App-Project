@@ -1,14 +1,23 @@
 package com.example.osrscomrade;
 
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.osrscomrade.twitter.Twitter;
+
 import java.util.Objects;
+
+
 
 public class mainScreen extends AppCompatActivity {
 
-    String versionName = "1.0";
+
+    //Version name to give the app a more real feel
+    String versionName = "0.2.0";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +32,13 @@ public class mainScreen extends AppCompatActivity {
         textViewVersion.setText(String.format("%s%s", getString(R.string.version), versionName));
 
     }
+
+    public void newsActivity(View view) {
+        startActivity(new Intent(this, Twitter.class));
+    }
+
+
+
 
     public void onBackPressed() {
     }
