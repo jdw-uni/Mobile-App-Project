@@ -53,7 +53,7 @@ public class OsrsTimelineFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.osrs_timeline_fragment, container, false);
+        return inflater.inflate(R.layout.twitter_timeline_fragment, container, false);
     }
 
     @Override
@@ -71,9 +71,6 @@ public class OsrsTimelineFragment extends Fragment {
         userTimelineRecyclerView.setLayoutManager(linearLayoutManager);
     }
 
-    /**
-     * method to load user timeline over recycler view
-     */
     //Load user timeline (@OldSchoolRS)
     private void loadUserTimeline() {
         //Build UserTimeline

@@ -49,10 +49,4 @@ public class mainScreen extends AppCompatActivity {
         return false;
     }
 
-
-
-
-
-
-
 }

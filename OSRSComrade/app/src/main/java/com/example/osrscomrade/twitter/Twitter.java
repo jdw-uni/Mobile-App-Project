@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.osrscomrade.R;
+import com.example.osrscomrade.news.NewsTimelineFragment;
 import com.google.android.material.tabs.TabLayout;
 
 public class Twitter extends AppCompatActivity {
