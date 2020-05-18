@@ -5,12 +5,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.osrscomrade.twitter.Twitter;
+import com.example.osrscomrade.wiki.wikiMain;
 
 import java.util.Objects;
-
 
 
 public class mainScreen extends AppCompatActivity {
@@ -37,7 +38,9 @@ public class mainScreen extends AppCompatActivity {
         startActivity(new Intent(this, Twitter.class));
     }
 
-
+    public void wikiActivity(View view) {
+        startActivity(new Intent(this, wikiMain.class));
+    }
 
 
     public void onBackPressed() {

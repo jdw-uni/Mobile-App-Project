@@ -64,6 +64,7 @@
         android:layout_width="175dp"
         android:layout_height="60dp"
         android:layout_marginStart="28dp"
+        android:onClick="wikiActivity"
         android:layout_marginTop="8dp"
         android:text="@string/wiki"
         app:layout_constraintStart_toStartOf="parent"

@@ -12,10 +12,11 @@
     <string name="stats">HISCORES</string>
     <string name="wiki">OSRS WIKI</string>
     <string name="news">OSRS NEWS</string>
-    <string name="farm">FARM TIMERS</string>
-    <string name="notes">NOTES</string>
+    <string name="farm">----</string>
+    <string name="notes">----</string>
     <!-- End mainScreen strings. -->
 
+    <string name="search_wiki">Search The OSRS Wiki</string>
 
     <!-- string array for Twitter items -->
     <string-array name="tab_items">

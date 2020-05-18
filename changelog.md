@@ -35,3 +35,10 @@ Monday 11/05/2020
 Wednesday 13/05/2020
 - Added Old School Runescape News Website (using Jsoup)
 
+
+## WEEK 10
+
+Tuesday 19/05/2020
+- Added OSRS Wiki Search (https://oldschool.runescape.wiki/)
+
+

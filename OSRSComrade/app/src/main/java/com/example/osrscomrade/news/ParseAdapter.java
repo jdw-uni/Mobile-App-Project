@@ -6,8 +6,6 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -32,7 +30,7 @@ public class ParseAdapter extends RecyclerView.Adapter<ParseAdapter.ViewHolder> 
     @NonNull
     @Override
     public ParseAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.parse_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.news_item, parent, false);
         return new ViewHolder(view);
     }
 
@@ -69,7 +67,9 @@ public class ParseAdapter extends RecyclerView.Adapter<ParseAdapter.ViewHolder> 
 
             //get Url from selected position and create new intent to url
             String url = parseItem.getDetailUrl();
-            Intent i = new Intent(Intent.ACTION_VIEW);
+            Intent i = new Intent();
+            i.setAction(Intent.ACTION_VIEW);
+            i.addCategory(Intent.CATEGORY_BROWSABLE);
             i.setData(Uri.parse(url));
             context.startActivity(i);
 
