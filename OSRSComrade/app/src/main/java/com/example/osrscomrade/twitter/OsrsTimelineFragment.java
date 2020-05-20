@@ -1,11 +1,19 @@
 package com.example.osrscomrade.twitter;
 
+import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.drawable.ColorDrawable;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.view.animation.AnimationUtils;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -16,6 +24,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.osrscomrade.R;
+import com.example.osrscomrade.news.NewsTimelineFragment;
+import com.example.osrscomrade.wiki.wikiMain;
 import com.twitter.sdk.android.core.Callback;
 import com.twitter.sdk.android.core.Result;
 import com.twitter.sdk.android.core.TwitterException;
@@ -30,6 +40,8 @@ public class OsrsTimelineFragment extends Fragment {
     private Context context;
     private RecyclerView userTimelineRecyclerView;
     private SwipeRefreshLayout swipeRefreshLayout;
+    private ProgressBar progressBar2;
+    private ProgressDialog pDialog;
     private TweetTimelineRecyclerViewAdapter adapter;
 
     @Override
@@ -59,60 +71,103 @@ public class OsrsTimelineFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        new Content().execute();
         setUpSwipeRefreshLayout(view);
         setUpRecyclerView(view);
-        loadUserTimeline();
+
+
+        // loadUserTimeline();
     }
 
     //Setup recycler view
     private void setUpRecyclerView(@NonNull View view) {
+        //progressBar2 = view.findViewById(R.id.progressBar2);
         userTimelineRecyclerView = view.findViewById(R.id.user_timeline_recycler_view);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);//it should be Vertical only
         userTimelineRecyclerView.setLayoutManager(linearLayoutManager);
     }
 
-    //Load user timeline (@OldSchoolRS)
-    private void loadUserTimeline() {
-        //Build UserTimeline
-        UserTimeline userTimeline = new UserTimeline.Builder()
-                //screen name of the user to show tweets for
-                .screenName("OldSchoolRS")
+    @SuppressLint("StaticFieldLeak")
+    private class Content extends AsyncTask<Void, Void, Void> {
 
-                //Whether to include replies. Defaults to false.
-                .includeReplies(false)
+        //Loading animation
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
 
-                //Whether to include re-tweets. Defaults to true.
-                .includeRetweets(true)
+            // Showing progress dialog
+            pDialog = new ProgressDialog(getContext());
+            pDialog.setMessage("Finding Tweets...");
+            pDialog.setCancelable(false);
+            pDialog.show();
+        }
 
-                //Max number of items to return per request
-                .maxItemsPerRequest(50)
-                .build();
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+
+            userTimelineRecyclerView.setAdapter(adapter);
+            //After we have obtained the JSON data
+            // Dismiss the progress dialog
+            if (pDialog.isShowing())
+                pDialog.dismiss();
 
 
-        //Build adapter for recycler view
-        adapter = new TweetTimelineRecyclerViewAdapter.Builder(context)
-                //Set the created timeline
-                .setTimeline(userTimeline)
+        }
 
-                //Action callback to listen when user like/unlike the tweet
-                .setOnActionCallback(new Callback<Tweet>() {
-                    @Override
-                    public void success(Result<Tweet> result) {
-                        //Do something on success response
-                    }
+        //Load user timeline (@OldSchoolRS)
+        protected Void doInBackground(Void... voids) {
+            //Build UserTimeline
+            try {
+                UserTimeline userTimeline = new UserTimeline.Builder()
+                        //screen name of the user to show tweets for
+                        .screenName("OldSchoolRS")
 
-                    @Override
-                    public void failure(TwitterException exception) {
-                        //Do something on failure response
-                    }
-                })
-                //Set tweet view style
-                .setViewStyle(R.style.tw__TweetLightWithActionsStyle)
-                .build();
+                        //Whether to include replies. Defaults to false.
+                        .includeReplies(false)
 
-        //Finally set the created adapter to recycler view
-        userTimelineRecyclerView.setAdapter(adapter);
+
+                        //Whether to include re-tweets. Defaults to true.
+                        .includeRetweets(true)
+
+                        //Max number of items to return per request
+                        .maxItemsPerRequest(1000)
+                        .build();
+
+
+                //Build adapter for recycler view
+                adapter = new TweetTimelineRecyclerViewAdapter.Builder(context)
+                        //Set the created timeline
+                        .setTimeline(userTimeline)
+
+                        //Action callback to listen when user like/unlike the tweet
+                        .setOnActionCallback(new Callback<Tweet>() {
+                            @Override
+                            public void success(Result<Tweet> result) {
+                                Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
+
+                            }
+
+                            @Override
+                            public void failure(TwitterException exception) {
+                                Toast.makeText(getActivity(), "No Tweets Found", Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        //Set tweet view style
+                        .setViewStyle(R.style.tw__TweetLightWithActionsStyle)
+                        .build();
+
+                //Finally set the created adapter to recycler view
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return  null;
+        }
+
     }
+
+
 
     //Swipe refresh layout
     private void setUpSwipeRefreshLayout(View view) {

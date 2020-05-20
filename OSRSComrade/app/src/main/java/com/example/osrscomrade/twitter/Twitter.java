@@ -38,4 +38,8 @@ public class Twitter extends AppCompatActivity {
         viewPager.setAdapter(adapter);
     }
 
+    public void onBackPressed() {
+        finish();
+    }
+
 }

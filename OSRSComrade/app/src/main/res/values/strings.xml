@@ -11,9 +11,9 @@
     <string name="price">GE TRACKER</string>
     <string name="stats">HISCORES</string>
     <string name="wiki">OSRS WIKI</string>
-    <string name="news">OSRS NEWS</string>
-    <string name="farm">----</string>
-    <string name="notes">----</string>
+    <string name="news">NEWS</string>
+    <string name="farm">FARM TIMER</string>
+    <string name="notes">Combat Level Calculator</string>
     <!-- End mainScreen strings. -->
 
     <string name="search_wiki">Search The OSRS Wiki</string>
@@ -24,5 +24,4 @@
         <item>NEWS</item>
     </string-array>
     <!-- End string array for Twitter items -->
-
 </resources>

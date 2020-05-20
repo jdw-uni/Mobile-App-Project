@@ -1,5 +1,6 @@
 package com.example.osrscomrade.news;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 
 
 public class NewsTimelineFragment extends Fragment {
@@ -33,6 +35,7 @@ public class NewsTimelineFragment extends Fragment {
     private ParseAdapter adapter;
     private ArrayList<ParseItem> parseItems = new ArrayList<>();
     private ProgressBar progressBar;
+    private ProgressDialog pDialog;
     private Context context;
 
     @Override
@@ -87,16 +90,24 @@ public class NewsTimelineFragment extends Fragment {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            progressBar.setVisibility(View.VISIBLE);
-            progressBar.startAnimation(AnimationUtils.loadAnimation(getActivity(), android.R.anim.fade_in));
+            // Showing progress dialog
+            pDialog = new ProgressDialog(getContext());
+            pDialog.setMessage("Finding Tweets...");
+            pDialog.setCancelable(false);
+            pDialog.show();
         }
 
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            progressBar.setVisibility(View.GONE);
-            progressBar.startAnimation(AnimationUtils.loadAnimation(getActivity(), android.R.anim.fade_out));
+
             adapter.notifyDataSetChanged();
+            //After we have obtained the JSON data
+            // Dismiss the progress dialog
+            if (pDialog.isShowing())
+                pDialog.dismiss();
+
+
         }
 
         @Override
@@ -137,7 +148,12 @@ public class NewsTimelineFragment extends Fragment {
                             .eq(i)
                             .attr("href");
 
-                    parseItems.add(new ParseItem(imgUrl, title, detailUrl));
+
+                    String date = data.select("time.news-list-article__date")
+                            .eq(i)
+                            .text();
+
+                    parseItems.add(new ParseItem(imgUrl, title, detailUrl, date));
                     Log.d("items", "img: " + imgUrl + " . title: " + title);
                 }
 

@@ -19,8 +19,25 @@
             android:name="org.apache.http.legacy"
             android:required="false" />
 
-        <activity android:name=".twitter.Twitter"
-            android:parentActivityName=".mainScreen">
+        <activity android:name=".mainScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".twitter.Twitter"
+            android:launchMode="singleTop"
+            android:parentActivityName=".mainScreen"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:launchMode="singleTop"
+                android:value=".mainScreen" />
         </activity>
         <activity
             android:name=".wiki.wikiMain"
@@ -36,14 +53,21 @@
                 android:value=".mainScreen" />
         </activity>
 
+        <activity
+            android:name=".farmTimer_main"
+            android:launchMode="singleTop"
+            android:parentActivityName=".mainScreen"
+            android:screenOrientation="fullSensor"
+            tools:ignore="LockedOrientationActivity">
 
-        <activity android:name=".mainScreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:launchMode="singleTop"
+                android:value=".mainScreen" />
         </activity>
+
+
 
 
 

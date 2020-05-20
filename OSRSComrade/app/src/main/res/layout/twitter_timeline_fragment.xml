@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/user_swipe_refresh_layout"
     android:layout_width="match_parent"
+    android:background="@color/windowBackground"
     android:layout_height="match_parent">
 
     <LinearLayout
@@ -12,7 +14,9 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/user_timeline_recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent" >
+
+        </androidx.recyclerview.widget.RecyclerView>
 
         <TextView
             android:id="@+id/empty"
