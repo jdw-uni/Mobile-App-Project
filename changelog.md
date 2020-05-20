@@ -42,7 +42,9 @@ Tuesday 19/05/2020
 - Added OSRS Wiki Search (https://oldschool.runescape.wiki/)
 
 Wednesday 20/05/2020
+- Fixed crash when User closed Twitter feed to quickly
 - Increased OSRS Wiki Search limit
+- Increased Twitter feed limit
 - Added Date to News
 - Added second back function
 
