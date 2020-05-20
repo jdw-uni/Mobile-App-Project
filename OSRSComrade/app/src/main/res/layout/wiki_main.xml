@@ -15,14 +15,15 @@
         android:layout_marginTop="56dp"
         android:ems="10"
         android:hint="e.g. Gold, Dragon, Ore"
+        android:imeOptions="actionSearch"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonSearch2"
-        android:layout_width="360dp"
-        android:layout_height="41dp"
+        android:id="@+id/buttonAdd"
+        android:layout_width="364dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="100dp"
         android:backgroundTint="@color/buttonColor"

@@ -1,45 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.cardview.widget.CardView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cardView"
+        style="@style/CardView.Light"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        style="@style/CardView.Light"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="8dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:layout_width="match_parent"
+            android:id="@+id/imageView2"
+            android:layout_width="0dp"
             android:layout_height="100dp"
-            android:layout_gravity="bottom"
-            android:startColor="#33000000"
+            android:angle="90"
             android:endColor="@android:color/transparent"
-            android:angle="90"/>
+            android:startColor="#33000000"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:scaleType="centerCrop"
-            android:src="#88888888" />
+            android:src="#88888888"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/DateView"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="120dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="12dp"
+            android:background="@color/windowBackground"
+            android:gravity="center"
+            android:text="Date"
+            android:textColor="#fff"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/textView"
             style="@style/TextAppearance.AppCompat.Medium"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_margin="12dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="4dp"
             android:background="@color/windowBackground"
             android:gravity="center"
             android:text="Title"
-            android:textColor="#fff" />
+            android:textColor="#fff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

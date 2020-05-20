@@ -41,4 +41,9 @@ Wednesday 13/05/2020
 Tuesday 19/05/2020
 - Added OSRS Wiki Search (https://oldschool.runescape.wiki/)
 
+Wednesday 20/05/2020
+- Increased OSRS Wiki Search limit
+- Added Date to News
+- Added second back function
+
 

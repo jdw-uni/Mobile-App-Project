@@ -85,13 +85,14 @@
 
     <Button
         android:id="@+id/farm"
-        android:backgroundTint="#4EC7B8"
-        android:textColor="@color/textColorSecondary"
         android:layout_width="175dp"
         android:layout_height="60dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="260dp"
+        android:backgroundTint="#4EC7B8"
+        android:onClick="farmActivity"
         android:text="@string/farm"
+        android:textColor="@color/textColorSecondary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

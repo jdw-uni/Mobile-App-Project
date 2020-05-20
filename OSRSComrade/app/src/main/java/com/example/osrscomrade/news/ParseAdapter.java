@@ -39,6 +39,7 @@ public class ParseAdapter extends RecyclerView.Adapter<ParseAdapter.ViewHolder> 
         //Set position of each and display text/image
         ParseItem parseItem = parseItems.get(position);
         holder.textView.setText(parseItem.getTitle());
+        holder.dateView.setText(parseItem.getDate());
         Glide.with(context).load(parseItem.getImgUrl()).into(holder.imageView);
     }
 
@@ -51,11 +52,13 @@ public class ParseAdapter extends RecyclerView.Adapter<ParseAdapter.ViewHolder> 
 
         ImageView imageView;
         TextView textView;
+        TextView dateView;
 
         public ViewHolder(@NonNull View view) {
             super(view);
             imageView = view.findViewById(R.id.imageView);
             textView = view.findViewById(R.id.textView);
+            dateView = view.findViewById(R.id.DateView);
             view.setOnClickListener(this);
         }
 
