@@ -9,8 +9,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AnimationUtils;
-import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,22 +24,17 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
 
 
 public class NewsTimelineFragment extends Fragment {
 
-    private RecyclerView recyclerView;
     private ParseAdapter adapter;
     private ArrayList<ParseItem> parseItems = new ArrayList<>();
-    private ProgressBar progressBar;
     private ProgressDialog pDialog;
-    private Context context;
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        this.context = context;
     }
 
     public NewsTimelineFragment() {
@@ -73,13 +66,13 @@ public class NewsTimelineFragment extends Fragment {
     }
 
     private void setUpRecyclerView(@NonNull View view) {
-        progressBar = view.findViewById(R.id.progressBar);
-        recyclerView = view.findViewById(R.id.recyclerView);
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         adapter = new ParseAdapter(parseItems, getActivity());
         recyclerView.setAdapter(adapter);
+
     }
 
 
@@ -148,12 +141,17 @@ public class NewsTimelineFragment extends Fragment {
                             .eq(i)
                             .attr("href");
 
-
+                    //DATE
                     String date = data.select("time.news-list-article__date")
                             .eq(i)
                             .text();
 
-                    parseItems.add(new ParseItem(imgUrl, title, detailUrl, date));
+                    //INFO
+                    String info = data.select("p.news-list-article__summary")
+                            .eq(i)
+                            .text();
+
+                    parseItems.add(new ParseItem(imgUrl, title, detailUrl, date, info));
                     Log.d("items", "img: " + imgUrl + " . title: " + title);
                 }
 

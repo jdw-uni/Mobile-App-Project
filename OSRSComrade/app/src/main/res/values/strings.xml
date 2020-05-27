@@ -14,9 +14,18 @@
     <string name="news">NEWS</string>
     <string name="farm">FARM TIMER</string>
     <string name="notes">Combat Level Calculator</string>
+    <string name="map">Interactive Map</string>
     <!-- End mainScreen strings. -->
 
+    <string name="search_ge_header">Search The Grand Exchange</string>
+    <string name="search_ge_eg">e.g. Old school bond</string>
+
+    <!-- Headers. -->
     <string name="search_wiki">Search The OSRS Wiki</string>
+    <string name="farm_timer">Farm Timers</string>
+    <string name="search_news">News</string>
+    <string name="combatlevelstring">Combat Level Calculator</string>
+    <!-- End of Headers. -->
 
     <!-- string array for Twitter items -->
     <string-array name="tab_items">
@@ -24,4 +33,120 @@
         <item>NEWS</item>
     </string-array>
     <!-- End string array for Twitter items -->
+
+    <!-- priceDetailsScreen. -->
+    <string name="price_iteminfo">Item Info</string>
+    <string name="price_itemicon">Item Icon</string>
+    <string name="price_p2p">Members</string>
+    <string name="price_description">&#160;Description</string>
+    <string name="price_current">&#160;Current Price</string>
+    <string name="changes">&#160;Price Changes</string>
+    <string name="change_today">&#160;Today</string>
+    <string name="change_1_month">&#160;1 Month</string>
+    <string name="change_3_month">&#160;3 Month</string>
+    <string name="change_6_month">&#160;6 Month</string>
+    <string name="alch_prices">&#160;Alchemy Prices</string>
+    <string name="high_alch">&#160;High Alch</string>
+    <string name="low_alch">&#160;Low Alch</string>
+    <!-- End priceDetailsScreen. -->
+
+    <!-- statsMainScreen. -->
+    <string name="hiscore_header">Old School Hiscores</string>
+    <string name="stats_header">Search Player Stats</string>
+    <string name="stats_searcheg">e.g. Lynx Titan</string>
+    <!-- End statsMainScreen. -->
+
+    <!-- statsSearchScreen. -->
+    <string name="chat_head">Chat Head</string>
+    <string name="old_level">0</string>
+    <string name="text_0">0</string>
+    <string name="text_1">1</string>
+    <string name="text_10">10</string>
+    <string name="skill">Skill</string>
+    <string name="level">Level</string>
+    <string name="rank">Rank</string>
+    <string name="exp">EXP</string>
+    <string name="activity">Activity</string>
+    <string name="score">Score</string>
+    <string name="overall">Overall</string>
+    <string name="attack">Attack</string>
+    <string name="defence">Defence</string>
+    <string name="strength">Strength</string>
+    <string name="hitpoints">Hitpoints</string>
+    <string name="ranged">Ranged</string>
+    <string name="prayer">Prayer</string>
+    <string name="magic">Magic</string>
+    <string name="cooking">Cooking</string>
+    <string name="woodcutting">Woodcutting</string>
+    <string name="fletching">Fletching</string>
+    <string name="fishing">Fishing</string>
+    <string name="firemaking">Firemaking</string>
+    <string name="crafting">Crafting</string>
+    <string name="smithing">Smithing</string>
+    <string name="mining">Mining</string>
+    <string name="herblore">Herblore</string>
+    <string name="agility">Agility</string>
+    <string name="thieving">Thieving</string>
+    <string name="slayer">Slayer</string>
+    <string name="farming">Farming</string>
+    <string name="runecraft">Runecraft</string>
+    <string name="hunter">Hunter</string>
+    <string name="construction">Construction</string>
+
+    <string name="league">League Points</string>
+    <string name="bhh">Bounty Hunter - Hunter</string>
+    <string name="bhr">Bounty Hunter - Rogue</string>
+    <string name="csa">Clue Scrolls (all)</string>
+    <string name="csb">Clue Scrolls (beginner)</string>
+    <string name="cse">Clue Scrolls (easy)</string>
+    <string name="csm">Clue Scrolls (medium)</string>
+    <string name="csh">Clue Scrolls (hard)</string>
+    <string name="csel">Clue Scrolls (elite)</string>
+    <string name="csma">Clue Scrolls (master)</string>
+    <string name="lms">LMS - Rank</string>
+    <string name="sire">Abyssal Sire</string>
+    <string name="hydra">Alchemical Hydra</string>
+    <string name="barrows">Barrows Chests</string>
+    <string name="bryophyta">Bryophyta</string>
+    <string name="callisto">Callisto</string>
+    <string name="cerberus">Cerberus</string>
+    <string name="cox">Chambers of Xeric</string>
+    <string name="coxcm">Chambers of Xeric: Challenge Mode</string>
+    <string name="elemental">Chaos Elemental</string>
+    <string name="fanatic">Chaos Fanatic</string>
+    <string name="zilyana">Commander Zilyana</string>
+    <string name="corporeal">Corporeal Beast</string>
+    <string name="carchaeologist">Crazy Archaeologist</string>
+    <string name="prime">Dagannoth Prime</string>
+    <string name="rex">Dagannoth Rex</string>
+    <string name="supreme">Dagannoth Supreme</string>
+    <string name="darchaeologist">Deranged Archaeologist</string>
+    <string name="graardor">General Graardor</string>
+    <string name="mole">Giant Mole</string>
+    <string name="guardians">Grotesque Guardians</string>
+    <string name="hespori">Hespori</string>
+    <string name="kqueen">Kalphite Queen</string>
+    <string name="kbd">King Black Dragon</string>
+    <string name="kraken">Kraken</string>
+    <string name="kree">Kree\'Arra</string>
+    <string name="kril">K\'ril Tsutsaroth</string>
+    <string name="mimic">Mimic</string>
+    <string name="nightmare">Nightmare</string>
+    <string name="obor">Obor</string>
+    <string name="sarachnis">Sarachnis</string>
+    <string name="scorpia">Scorpia</string>
+    <string name="skotizo">Skotizo</string>
+    <string name="gauntlet">The Gauntlet</string>
+    <string name="cgauntlet">The Corrupted Gauntlet</string>
+    <string name="tob">Theatre of Blood</string>
+    <string name="tsd">Thermonuclear Smoke Devil</string>
+    <string name="zuk">TzKal-Zuk</string>
+    <string name="jad">TzTok-Jad</string>
+    <string name="venenatis">Venenatis</string>
+    <string name="vetion">Vet\'ion</string>
+    <string name="vorkath">Vorkath</string>
+    <string name="wintertodt">Wintertodt</string>
+    <string name="zalcano">Zalcano</string>
+    <string name="zulrah">Zulrah</string>
+
 </resources>

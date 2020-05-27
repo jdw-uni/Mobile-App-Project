@@ -3,9 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.osrscomrade">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:name=".twitter.TwitterKey"
         android:allowBackup="true"
@@ -13,18 +16,32 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
 
-        <activity android:name=".mainScreen">
+        <activity android:name=".SplashScreen"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".mainScreen"
+            android:launchMode="singleTop"
+            android:parentActivityName=".mainScreen"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:launchMode="singleTop"
+                android:value=".mainScreen" />
         </activity>
         <activity
             android:name=".twitter.Twitter"
@@ -43,7 +60,7 @@
             android:name=".wiki.wikiMain"
             android:launchMode="singleTop"
             android:parentActivityName=".mainScreen"
-            android:screenOrientation="fullSensor"
+            android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
@@ -52,12 +69,11 @@
                 android:launchMode="singleTop"
                 android:value=".mainScreen" />
         </activity>
-
         <activity
-            android:name=".farmTimer_main"
+            android:name=".farm.farmTimer_main"
             android:launchMode="singleTop"
             android:parentActivityName=".mainScreen"
-            android:screenOrientation="fullSensor"
+            android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
@@ -66,13 +82,102 @@
                 android:launchMode="singleTop"
                 android:value=".mainScreen" />
         </activity>
+        <activity
+            android:name=".map.map_main"
+            android:launchMode="singleTop"
+            android:parentActivityName=".mainScreen"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
 
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:launchMode="singleTop"
+                android:value=".mainScreen" />
+        </activity>
+        <activity
+            android:name=".combat.combat_level"
+            android:launchMode="singleTop"
+            android:parentActivityName=".mainScreen"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
 
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:launchMode="singleTop"
+                android:value=".mainScreen" />
+        </activity>
+        <activity
+            android:name=".gePrice.priceSearchScreen"
+            android:launchMode="singleTop"
+            android:parentActivityName=".mainScreen"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
 
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:launchMode="singleTop"
+                android:value=".mainScreen" />
+        </activity>
+        <activity
+            android:name=".gePrice.priceListingScreen"
+            android:launchMode="singleTop"
+            android:parentActivityName=".gePrice.priceSearchScreen"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:launchMode="singleTop"
+                android:value=".gePrice.priceSearchScreen" />
+        </activity>
+        <activity
+            android:name=".gePrice.priceDetailsScreen"
+            android:launchMode="singleTop"
+            android:parentActivityName=".gePrice.priceListingScreen"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:launchMode="singleTop"
+                android:value=".gePrice.priceListingScreen" />
+        </activity>
+        <activity
+            android:name=".playerStats.statSearchScreen"
+            android:launchMode="singleTop"
+            android:parentActivityName=".mainScreen"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:launchMode="singleTop"
+                android:value=".mainScreen" />
+        </activity>
+        <activity
+            android:name=".playerStats.statsDetailScreen"
+            android:launchMode="singleTop"
+            android:parentActivityName=".playerStats.statSearchScreen"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:launchMode="singleTop"
+                android:value=".playerStats.statSearchScreen" />
+        </activity>
 
 
 
 
 
     </application>
+
 </manifest>

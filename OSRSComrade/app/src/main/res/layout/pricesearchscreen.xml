@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pricesearchscreen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/newBackground">
+
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="393dp"
+        android:layout_height="136dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/backgroundshape"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/search3"
+        android:layout_width="131dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:text="Find Item"
+        android:textColor="@color/newBackground"
+        android:textSize="21sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/searchText"
+        android:layout_width="360dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="56dp"
+        android:background="@color/newButtonColour"
+        android:ems="10"
+        android:hint="Enter item name"
+        android:imeOptions="actionSearch"
+        android:inputType="textPersonName"
+        android:paddingLeft="10dp"
+        android:textColor="@color/textColorPrimary"
+        android:textColorHint="@color/newButtonHint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonSearch"
+        android:layout_width="366dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="100dp"
+        android:backgroundTint="@color/newButtonColour"
+        android:onClick="itemSearch"
+        android:text="Search"
+        android:textColor="@color/textColorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,10 +11,9 @@ import com.example.osrscomrade.R;
 import com.example.osrscomrade.news.NewsTimelineFragment;
 import com.google.android.material.tabs.TabLayout;
 
-public class Twitter extends AppCompatActivity {
+import java.util.Objects;
 
-    private ViewPager viewPager;
-    private TabLayout tabLayout;
+public class Twitter extends AppCompatActivity {
 
 
     @Override
@@ -22,12 +21,15 @@ public class Twitter extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        viewPager = findViewById(R.id.twitter_view_pager);
+        ViewPager viewPager = findViewById(R.id.twitter_view_pager);
 
-        tabLayout = findViewById(R.id.twitter_tab);
+        TabLayout tabLayout = findViewById(R.id.twitter_tab);
 
         //Setting tab over viewpager
         tabLayout.setupWithViewPager(viewPager);
+
+        Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.search_news);
+
 
         //Get tab array from string.xml
         String[] tabArray = getResources().getStringArray(R.array.tab_items);

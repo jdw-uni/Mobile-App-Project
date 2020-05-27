@@ -21,16 +21,16 @@ public class wikiAdapter extends RecyclerView.Adapter<wikiAdapter.ExampleViewHol
         void onItemClick(int position);
     }
 
-    public void setOnItemClickListener(OnItemClickListener listener) {
+    void setOnItemClickListener(OnItemClickListener listener) {
         mListener = listener;
     }
 
-    public static class ExampleViewHolder extends RecyclerView.ViewHolder {
-        public ImageView mImageView;
-        public TextView mTextView1;
-        public TextView mTextView2;
+    static class ExampleViewHolder extends RecyclerView.ViewHolder {
+        ImageView mImageView;
+        TextView mTextView1;
+        TextView mTextView2;
 
-        public ExampleViewHolder(@NonNull View itemView, final OnItemClickListener listener) {
+        ExampleViewHolder(@NonNull View itemView, final OnItemClickListener listener) {
             super(itemView);
             mImageView = itemView.findViewById(R.id.imageView);
             mTextView1 = itemView.findViewById(R.id.textView);
@@ -50,7 +50,7 @@ public class wikiAdapter extends RecyclerView.Adapter<wikiAdapter.ExampleViewHol
         }
     }
 
-    public wikiAdapter(ArrayList<wikiItem> exampleList) {
+    wikiAdapter(ArrayList<wikiItem> exampleList) {
         mExampleList = exampleList;
     }
 
@@ -58,8 +58,7 @@ public class wikiAdapter extends RecyclerView.Adapter<wikiAdapter.ExampleViewHol
     @Override
     public ExampleViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.wiki_item, parent, false);
-        ExampleViewHolder evh = new ExampleViewHolder(v, mListener);
-        return evh;
+        return new ExampleViewHolder(v, mListener);
     }
 
     @Override
