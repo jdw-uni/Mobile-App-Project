@@ -6,18 +6,23 @@ public class ParseItem {
     private String title;
     private String detailUrl;
     private String date;
-    private String info;
 
-    public ParseItem(String imgUrl, String title, String detailUrl, String date, String info) {
+    public ParseItem() {
+    }
+
+    public ParseItem(String imgUrl, String title, String detailUrl, String date) {
         this.imgUrl = imgUrl;
         this.title = title;
         this.detailUrl = detailUrl;
         this.date = date;
-        this.info = info;
     }
 
     public String getImgUrl() {
         return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 
     public String getTitle() {
@@ -30,9 +35,13 @@ public class ParseItem {
 
     public String getDetailUrl() { return detailUrl; }
 
+    public void setDetailUrl(String detailUrl) { this.detailUrl = detailUrl; }
+
     public String getDate() { return date; }
 
-    public String getInfo() { return info; }
+    public void setDate(String title) {
+        this.date = date;
+    }
 
 
 }

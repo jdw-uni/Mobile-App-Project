@@ -6,17 +6,10 @@
 
     <color name="windowBackground">#9D313F</color>
 
-    <color name="textColorPrimary">#f4f5f8</color>
+    <color name="textColorPrimary">#FFFFFF</color>
     <color name="textColorSecondary">#000000</color>
 
     <color name="buttonColor">#319D8F</color>
     <color name="colorAccent">#737CA1</color>
-
-
-    <color name="newBackground">#222428</color>
-    <color name="mainColour">#c6b17a</color>
-    <color name="newButtonColour">#4e4337</color>
-    <color name="newButtonHint">#989aa2</color>
-
 
 </resources>

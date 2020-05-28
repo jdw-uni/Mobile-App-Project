@@ -48,24 +48,4 @@ Wednesday 20/05/2020
 - Added Date to News
 - Added second back function
 
-Thursday 21/05/2020
-- Added Web Interactive Map
-
-
-## WEEK 11
-
-Monday 25/05/2020
-- Added Splash screen
-- Added Combat Level Calculator
-- Finished Hiscore API
-- Added Hiscore Lookup
-
-Thursday 27/05/2020
-- Added Grand Exchange Lookup
-- Completed and Added Grand Exchange API
-- Completed Colour Theory
-- Added Info text to News
-
-
-
 

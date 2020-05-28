@@ -3,12 +3,16 @@ package com.example.osrscomrade.twitter;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.view.animation.AnimationUtils;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -20,6 +24,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.osrscomrade.R;
+import com.example.osrscomrade.news.NewsTimelineFragment;
+import com.example.osrscomrade.wiki.wikiMain;
 import com.twitter.sdk.android.core.Callback;
 import com.twitter.sdk.android.core.Result;
 import com.twitter.sdk.android.core.TwitterException;
@@ -34,6 +40,7 @@ public class OsrsTimelineFragment extends Fragment {
     private Context context;
     private RecyclerView userTimelineRecyclerView;
     private SwipeRefreshLayout swipeRefreshLayout;
+    private ProgressBar progressBar2;
     private ProgressDialog pDialog;
     private TweetTimelineRecyclerViewAdapter adapter;
 
@@ -67,10 +74,14 @@ public class OsrsTimelineFragment extends Fragment {
         new Content().execute();
         setUpSwipeRefreshLayout(view);
         setUpRecyclerView(view);
+
+
+        // loadUserTimeline();
     }
 
     //Setup recycler view
     private void setUpRecyclerView(@NonNull View view) {
+        //progressBar2 = view.findViewById(R.id.progressBar2);
         userTimelineRecyclerView = view.findViewById(R.id.user_timeline_recycler_view);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);//it should be Vertical only
         userTimelineRecyclerView.setLayoutManager(linearLayoutManager);

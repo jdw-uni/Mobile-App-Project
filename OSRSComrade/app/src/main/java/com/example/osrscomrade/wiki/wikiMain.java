@@ -1,6 +1,7 @@
 package com.example.osrscomrade.wiki;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -35,7 +36,9 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class wikiMain extends AppCompatActivity {
+    private RecyclerView mRecyclerView;
     private wikiAdapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
 
     EditText searchText2;
     Button buttonSearch2;
@@ -319,12 +322,6 @@ public class wikiMain extends AppCompatActivity {
 
             addItemsToList();
 
-            if (mAdapter.getItemCount() == 0) {
-
-                Toast.makeText(getApplicationContext(), "No search term found", Toast.LENGTH_SHORT).show();
-            }
-
-
             //After we have obtained the JSON data
             // Dismiss the progress dialog
             if (pDialog.isShowing())
@@ -340,9 +337,9 @@ public class wikiMain extends AppCompatActivity {
         exampleList.clear();
 
 
-        RecyclerView mRecyclerView = findViewById(R.id.recyclerView);
+        mRecyclerView = findViewById(R.id.recyclerView);
         mRecyclerView.setHasFixedSize(true);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
+        mLayoutManager = new LinearLayoutManager(this);
         mAdapter = new wikiAdapter(exampleList);
 
         mRecyclerView.setLayoutManager(mLayoutManager);

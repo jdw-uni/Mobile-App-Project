@@ -17,9 +17,9 @@ import java.util.List;
 
 public class ServiceHandler {
 
-    private static String response = null;
+    static String response = null;
     public final static int GET = 1;
-    private final static int POST = 2;
+    public final static int POST = 2;
 
     public ServiceHandler() {
 
@@ -42,12 +42,12 @@ public class ServiceHandler {
      * @method - http request method
      * @params - http request params
      */
-    private String makeServiceCall(String url, int method,
-                                   List<NameValuePair> params) {
+    public String makeServiceCall(String url, int method,
+                                  List<NameValuePair> params) {
         try {
             // http client
             DefaultHttpClient httpClient = new DefaultHttpClient();
-            HttpEntity httpEntity;
+            HttpEntity httpEntity = null;
             HttpResponse httpResponse = null;
 
             // Checking http request method type

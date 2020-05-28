@@ -32,7 +32,7 @@ public class TabViewPagerAdapter extends FragmentPagerAdapter {
     }
 
     //Add fragment to list
-    void addFrag(Fragment fragment, String title) {
+    public void addFrag(Fragment fragment, String title) {
         mFragmentList.add(fragment);
         mFragmentTitleList.add(title);
     }
