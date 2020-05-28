@@ -22,7 +22,7 @@ public class ParseAdapter extends RecyclerView.Adapter<ParseAdapter.ViewHolder> 
     private ArrayList<ParseItem> parseItems;
     private Context context;
 
-    public ParseAdapter(ArrayList<ParseItem> parseItems, Context context) {
+    ParseAdapter(ArrayList<ParseItem> parseItems, Context context) {
         this.parseItems = parseItems;
         this.context = context;
     }
@@ -34,14 +34,29 @@ public class ParseAdapter extends RecyclerView.Adapter<ParseAdapter.ViewHolder> 
         return new ViewHolder(view);
     }
 
+
+    private static String removeWords(String word, String remove) {
+        return word.replace(remove,"...");
+    }
+
+    private static String replaceWords(String word, String replace) {
+        return word.replace(replace,"'");
+    }
+
     @Override
     public void onBindViewHolder(@NonNull ParseAdapter.ViewHolder holder, int position) {
         //Set position of each and display text/image
         ParseItem parseItem = parseItems.get(position);
         holder.textView.setText(parseItem.getTitle());
         holder.dateView.setText(parseItem.getDate());
+        String remove = "\u0085 read more";
+        String replace = "\u0092";
+        String newInfo = (removeWords(parseItem.getInfo(), remove));
+        holder.infoView.setText(replaceWords(newInfo, replace));
         Glide.with(context).load(parseItem.getImgUrl()).into(holder.imageView);
+
     }
+
 
     @Override
     public int getItemCount() {
@@ -53,13 +68,16 @@ public class ParseAdapter extends RecyclerView.Adapter<ParseAdapter.ViewHolder> 
         ImageView imageView;
         TextView textView;
         TextView dateView;
+        TextView infoView;
 
-        public ViewHolder(@NonNull View view) {
+        ViewHolder(@NonNull View view) {
             super(view);
             imageView = view.findViewById(R.id.imageView);
             textView = view.findViewById(R.id.textView);
             dateView = view.findViewById(R.id.DateView);
+            infoView = view.findViewById(R.id.infoView);
             view.setOnClickListener(this);
+
         }
 
         @Override

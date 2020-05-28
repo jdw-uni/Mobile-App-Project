@@ -1,0 +1,1289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/newBackground"
+    android:layout_height="match_parent"
+    tools:context=".playerStats.hiscoreFragment">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/layout_margin_bottom">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:contentDescription="@string/overall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin_top"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/skill_icon_overall"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/combatlvl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:text="Combat:"
+                android:textColor="@android:color/white"
+                android:visibility="visible" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/level"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/rank"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/exp"
+                android:textColor="@android:color/white" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/overall">
+
+            <ImageView
+                android:id="@+id/overall_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/layout_margin_top"
+                android:background="@drawable/skill_icon_overall"
+                android:contentDescription="@string/overall"
+                android:gravity="center"
+                android:visibility="invisible" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:text="@string/overall"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/overalllvl"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_1"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/overallrank"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/overallxp"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/attack">
+
+            <ImageView
+                android:contentDescription="@string/attack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin_top"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/skill_icon_attack"
+                android:id="@+id/attack_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:text="@string/attack"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/attacklvl"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_1"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/attackrank"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/attackxp"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/defence">
+
+            <ImageView
+                android:contentDescription="@string/defence"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin_top"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/skill_icon_defence"
+                android:id="@+id/defence_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:text="@string/defence"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/defencelvl"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_1"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/defencerank"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/defencexp"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/strength">
+
+            <ImageView
+                android:contentDescription="@string/strength"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin_top"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/skill_icon_strength"
+                android:id="@+id/strength_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:text="@string/strength"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/strengthlvl"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_1"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/strengthrank"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/strengthxp"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/hitpoints">
+
+            <ImageView
+                android:contentDescription="@string/hitpoints"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin_top"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/skill_icon_hitpoints"
+                android:id="@+id/hitpoints_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:text="@string/hitpoints"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/hitpointslvl"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_1"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/hitpointsrank"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/hitpointsxp"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ranged">
+
+            <ImageView
+                android:contentDescription="@string/ranged"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin_top"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/skill_icon_ranged"
+                android:id="@+id/ranged_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:text="@string/ranged"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rangedlvl"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_1"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rangedrank"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rangedxp"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/prayer">
+
+            <ImageView
+                android:contentDescription="@string/prayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin_top"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/skill_icon_prayer"
+                android:id="@+id/prayer_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:text="@string/prayer"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/prayerlvl"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_1"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/prayerrank"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/prayerxp"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/magic">
+
+            <ImageView
+                android:contentDescription="@string/magic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin_top"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/skill_icon_magic"
+                android:id="@+id/magic_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:text="@string/magic"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/magiclvl"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_1"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/magicrank"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/magicxp"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/cooking">
+
+            <ImageView
+                android:contentDescription="@string/cooking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin_top"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/skill_icon_cooking"
+                android:id="@+id/cooking_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:text="@string/cooking"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cookinglvl"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_1"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cookingrank"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cookingxp"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/woodcutting">
+
+            <ImageView
+                android:contentDescription="@string/woodcutting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin_top"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/skill_icon_woodcutting"
+                android:id="@+id/woodcutting_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:text="@string/woodcutting"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/woodcuttinglvl"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_1"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/woodcuttingrank"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/woodcuttingxp"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/fletching">
+
+            <ImageView
+                android:contentDescription="@string/fletching"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin_top"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/skill_icon_fletching"
+                android:id="@+id/fletching_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:text="@string/fletching"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fletchinglvl"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_1"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fletchingrank"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fletchingxp"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/fishing">
+
+            <ImageView
+                android:contentDescription="@string/fishing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin_top"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/skill_icon_fishing"
+                android:id="@+id/fishing_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:text="@string/fishing"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fishinglvl"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_1"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fishingrank"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fishingxp"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white"
+                tools:ignore="TooManyViews" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/firemaking">
+
+            <ImageView
+                android:contentDescription="@string/firemaking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin_top"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/skill_icon_firemaking"
+                android:id="@+id/firemaking_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:text="@string/firemaking"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/firemakinglvl"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_1"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/firemakingrank"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/firemakingxp"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/crafting">
+
+            <ImageView
+                android:contentDescription="@string/crafting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin_top"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/skill_icon_crafting"
+                android:id="@+id/crafting_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:text="@string/crafting"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/craftinglvl"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_1"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/craftingrank"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/craftingxp"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/smithing">
+
+            <ImageView
+                android:contentDescription="@string/smithing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin_top"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/skill_icon_smithing"
+                android:id="@+id/smithing_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:text="@string/smithing"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/smithinglvl"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_1"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/smithingrank"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/smithingxp"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/mining">
+
+            <ImageView
+                android:contentDescription="@string/mining"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin_top"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/skill_icon_mining"
+                android:id="@+id/mining_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:text="@string/mining"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/mininglvl"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_1"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/miningrank"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/miningxp"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/herblore">
+
+            <ImageView
+                android:contentDescription="@string/herblore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin_top"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/skill_icon_herblore"
+                android:id="@+id/herblore_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:text="@string/herblore"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/herblorelvl"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_1"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/herblorerank"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/herblorexp"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/agility">
+
+            <ImageView
+                android:contentDescription="@string/agility"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin_top"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/skill_icon_agility"
+                android:id="@+id/agility_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:text="@string/agility"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/agilitylvl"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_1"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/agilityrank"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/agilityxp"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/thieving">
+
+            <ImageView
+                android:contentDescription="@string/thieving"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin_top"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/skill_icon_thieving"
+                android:id="@+id/thieving_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:text="@string/thieving"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/thievinglvl"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_1"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/thievingrank"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/thievingxp"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/slayer">
+
+            <ImageView
+                android:contentDescription="@string/slayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin_top"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/skill_icon_slayer"
+                android:id="@+id/slayer_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:text="@string/slayer"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/slayerlvl"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_1"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/slayerrank"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/slayerxp"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/farming">
+
+            <ImageView
+                android:contentDescription="@string/farming"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin_top"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/skill_icon_farming"
+                android:id="@+id/farming_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:text="@string/farming"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/farminglvl"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_1"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/farmingrank"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/farmingxp"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/runecraft">
+
+            <ImageView
+                android:contentDescription="@string/runecraft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin_top"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/skill_icon_runecraft"
+                android:id="@+id/runecrafting_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:text="@string/runecraft"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/runecraftlvl"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_1"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/runecraftrank"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/runecraftxp"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/hunter">
+
+            <ImageView
+                android:contentDescription="@string/hunter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin_top"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/skill_icon_hunter"
+                android:id="@+id/hunter_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:text="@string/hunter"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/hunterlvl"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_1"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/hunterrank"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/hunterxp"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/construction">
+
+            <ImageView
+                android:contentDescription="@string/construction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin_top"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/skill_icon_construction"
+                android:id="@+id/construction_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:text="@string/construction"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/constructionlvl"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_1"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/constructionrank"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/constructionxp"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="@android:color/white" />
+
+        </TableRow>
+    </TableLayout>
+</ScrollView>

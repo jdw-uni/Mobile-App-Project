@@ -2,11 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/windowBackground"
+    android:background="@color/newBackground"
     android:id="@+id/mainscreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+
     tools:context=".mainScreen">
 
     <ImageView
@@ -25,6 +26,7 @@
         android:id="@+id/textViewVersion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/newButtonColour"
         android:layout_gravity="end"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="20dp"
@@ -35,87 +37,107 @@
 
     <Button
         android:id="@+id/stats"
-        android:backgroundTint="#4EC7B8"
-        android:textColor="@color/textColorSecondary"
         android:layout_width="175dp"
-        android:layout_height="60dp"
+        android:layout_height="98dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="124dp"
+        android:backgroundTint="@color/mainColour"
+        android:drawableStart="@drawable/skill_icon_overall"
+        android:onClick="statsActivity"
         android:text="@string/stats"
+        android:textColor="@color/newBackground"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/search_ge"
-        android:backgroundTint="#4EC7B8"
-        android:textColor="@color/textColorSecondary"
         android:layout_width="175dp"
-        android:layout_height="60dp"
+        android:layout_height="98dp"
         android:layout_marginTop="124dp"
         android:layout_marginEnd="28dp"
+        android:backgroundTint="@color/mainColour"
+        android:drawableStart="@drawable/app_icon_gp"
+        android:onClick="priceActivity"
         android:text="@string/price"
+        android:textColor="@color/newBackground"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/wiki"
-        android:backgroundTint="#4EC7B8"
-        android:textColor="@color/textColorSecondary"
         android:layout_width="175dp"
-        android:layout_height="60dp"
+        android:layout_height="98dp"
         android:layout_marginStart="28dp"
-        android:onClick="wikiActivity"
         android:layout_marginTop="8dp"
+        android:backgroundTint="@color/mainColour"
+        android:drawableLeft="@drawable/app_icon_search"
+        android:onClick="wikiActivity"
         android:text="@string/wiki"
+        android:textColor="@color/newBackground"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/stats" />
 
     <Button
         android:id="@+id/news"
-        android:backgroundTint="#4EC7B8"
-        android:textColor="@color/textColorSecondary"
         android:layout_width="175dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="192dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="28dp"
+        android:backgroundTint="@color/mainColour"
+        android:drawableLeft="@drawable/game_icon_bosses"
         android:onClick="newsActivity"
         android:text="@string/news"
+        android:textColor="@color/newBackground"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/search_ge" />
 
     <Button
         android:id="@+id/farm"
         android:layout_width="175dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="260dp"
-        android:backgroundTint="#4EC7B8"
+        android:layout_height="98dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="116dp"
+        android:backgroundTint="@color/mainColour"
+        android:drawableStart="@drawable/skill_icon_herblore"
         android:onClick="farmActivity"
         android:text="@string/farm"
-        android:textColor="@color/textColorSecondary"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="@color/newBackground"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notes" />
 
     <Button
         android:id="@+id/notes"
-        android:backgroundTint="#4EC7B8"
-        android:textColor="@color/textColorSecondary"
         android:layout_width="175dp"
-        android:layout_height="60dp"
+        android:layout_height="98dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="28dp"
+        android:backgroundTint="@color/mainColour"
+        android:drawableStart="@drawable/skill_icon_attack"
+        android:onClick="combatActivity"
         android:text="@string/notes"
+        android:textColor="@color/newBackground"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/news" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
-        android:layout_marginTop="184dp"
-        android:text="something here"
+    <Button
+        android:id="@+id/map"
+        android:layout_width="175dp"
+        android:layout_height="98dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/mainColour"
+        android:drawableStart="@drawable/game_icon_cluescrollsall"
+        android:onClick="mapActivity"
+        android:text="@string/map"
+        android:textColor="@color/newBackground"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/farm" />
+        app:layout_constraintTop_toBottomOf="@+id/wiki" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

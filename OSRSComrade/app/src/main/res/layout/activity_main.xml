@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/windowBackground"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -14,21 +13,21 @@
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/twitter_view_pager"
         android:layout_width="match_parent"
-
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/newBackground">
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/twitter_tab"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimary"
-            app:tabBackground="?attr/colorPrimary"
+            android:background="@color/newButtonColour"
+            app:tabBackground="@color/newButtonColour"
             app:tabGravity="fill"
-            app:tabIndicatorColor="@color/buttonColor"
+            app:tabIndicatorColor="@color/newButtonHint"
             app:tabIndicatorHeight="3dp"
             app:tabMode="fixed"
-            app:tabSelectedTextColor="@android:color/white"
-            app:tabTextColor="@color/textColorPrimary" />
+            app:tabSelectedTextColor="@color/textColorPrimary"
+            app:tabTextColor="@color/newButtonHint" />
     </androidx.viewpager.widget.ViewPager>
 
 </LinearLayout>
