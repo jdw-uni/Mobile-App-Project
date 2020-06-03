@@ -861,7 +861,6 @@ public class activityFragment extends Fragment {
                     pDialog.dismiss();
 
 
-
                 //Updating textviews with hiscore values.
                 if (leagueRankValue.trim().length() == 0) {
                     league.setVisibility(View.GONE);
@@ -1196,7 +1195,7 @@ public class activityFragment extends Fragment {
             } else try {
                 if ((pDialog != null) && pDialog.isShowing()) {
                     pDialog.dismiss();
-                    Toast.makeText(Objects.requireNonNull(getActivity()).getApplicationContext(), username + "  was not found in the Overall table", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Objects.requireNonNull(getActivity()).getApplicationContext(), username + " was not found in the Overall table", Toast.LENGTH_SHORT).show();
                     getActivity().finish();
                 }
             } catch (final IllegalArgumentException e) {
@@ -1206,6 +1205,7 @@ public class activityFragment extends Fragment {
             } finally {
                 pDialog = null;
             }
+
 
         }
     }

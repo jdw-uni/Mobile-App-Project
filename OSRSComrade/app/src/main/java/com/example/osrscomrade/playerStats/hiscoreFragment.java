@@ -102,7 +102,7 @@ public class hiscoreFragment extends Fragment {
     }
 
     @Override
-    public void onCreate (Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
 
@@ -230,7 +230,6 @@ public class hiscoreFragment extends Fragment {
 
         return view;
     }
-
 
 
     //Get data class to get json data
@@ -493,11 +492,12 @@ public class hiscoreFragment extends Fragment {
             return null;
         }
 
+        @RequiresApi(api = Build.VERSION_CODES.N)
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
 
-            if(overallRankValue != null) {
+            if (overallRankValue != null) {
 
                 DecimalFormat df = new DecimalFormat();
                 df.setGroupingUsed(true);
@@ -617,7 +617,7 @@ public class hiscoreFragment extends Fragment {
                 }
                 if (miningRankValue.trim().length() == 0) {
                     mining.setVisibility(View.GONE);
-                }  else {
+                } else {
                     miningrank.setText(df.format(Long.valueOf(miningRankValue)));
                     mininglvl.setText(df.format(Long.valueOf(miningLvlValue)));
                     miningxp.setText(df.format(Long.valueOf(miningXpValue)));
@@ -693,21 +693,20 @@ public class hiscoreFragment extends Fragment {
                 pDialog = null;
             }
 
-            }
         }
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @SuppressLint("SetTextI18n")
-    public void calculateResults()
-    {
+    private void calculateResults() {
 
         Double Base = 0.25 * (Double.parseDouble(defenceLvlValue) + Double.parseDouble(hitpointsLvlValue) + floor(Double.parseDouble(prayerLvlValue) / 2));
 
         Double Melee = 0.325 * (Double.parseDouble(attackLvlValue) + Double.parseDouble(strengthLvlValue));
 
-        Double Range = 0.325 * (floor(3 * Double.parseDouble(rangedLvlValue) / 2 ));
+        Double Range = 0.325 * (floor(3 * Double.parseDouble(rangedLvlValue) / 2));
 
-        Double Magic = 0.325 * (floor(3 * Double.parseDouble(magicLvlValue) / 2 ));
+        Double Magic = 0.325 * (floor(3 * Double.parseDouble(magicLvlValue) / 2));
 
         Double Final = (Base + Double.max(Melee, Double.max(Range, Magic)));
 

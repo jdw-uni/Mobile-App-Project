@@ -23,7 +23,7 @@ public class mainScreen extends AppCompatActivity {
 
 
     //Version name to give the app a more real feel
-    String versionName = "0.8.2.0";
+    String versionName = "1.0.2";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

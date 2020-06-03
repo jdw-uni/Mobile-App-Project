@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/pricedetailscreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -16,274 +17,304 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <RelativeLayout
-            android:orientation="vertical"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/relativeLayout2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="397dp"
+                android:layout_height="447dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/backgroundshape2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView14"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
+                android:id="@+id/itemIcon"
                 android:layout_width="100sp"
                 android:layout_height="100sp"
-                android:id="@+id/itemIcon"
                 android:layout_marginTop="10dp"
                 android:contentDescription="@string/price_itemicon"
-                android:layout_centerHorizontal="true"/>
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:layout_width="@dimen/p2p_icon"
-                android:layout_height="@dimen/p2p_icon"
                 android:id="@+id/itemP2P"
-                android:layout_marginTop="10dp"
-                android:layout_alignBottom="@id/itemIcon"
-                android:layout_toEndOf="@id/itemIcon"
-                android:contentDescription="@string/price_p2p"/>
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/price_description"
-                android:id="@+id/itemDescriptionHeader"
-                android:layout_marginStart="@dimen/layout_margin_start"
-                android:layout_below="@id/itemIcon"
-                android:textColor="@color/mainColour"
-                android:textSize="@dimen/page_header_text_size"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/itemDescription"
-                android:layout_marginStart="@dimen/p2p_icon"
-                android:layout_below="@id/itemDescriptionHeader"
-                android:textColor="#ffffff"
-                android:textSize="@dimen/page_text_size" />
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/price_current"
-                android:id="@+id/itemPriceHeader"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="@dimen/layout_margin_start"
-                android:layout_below="@id/itemDescription"
-                android:textColor="@color/mainColour"
-                android:textSize="@dimen/page_header_text_size"
-                android:textStyle="bold" />
-
-            <ImageView
                 android:layout_width="@dimen/p2p_icon"
                 android:layout_height="@dimen/p2p_icon"
+                android:layout_marginTop="10dp"
+                android:contentDescription="@string/price_p2p"
+                app:layout_constraintBottom_toBottomOf="@id/itemIcon"
+                app:layout_constraintStart_toEndOf="@id/itemIcon" />
+
+            <TextView
+                android:id="@+id/itemDescriptionHeader"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/price_description"
+                android:textColor="@color/mainColour"
+                android:textSize="@dimen/page_header_text_size"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/itemIcon" />
+
+            <TextView
+                android:id="@+id/itemDescription"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/p2p_icon"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/page_text_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/itemDescriptionHeader" />
+
+            <TextView
+                android:id="@+id/itemPriceHeader"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:layout_marginTop="10dp"
+                android:text="@string/price_current"
+                android:textColor="@color/mainColour"
+                android:textSize="@dimen/page_header_text_size"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/itemDescription" />
+
+            <ImageView
                 android:id="@+id/gpIcon"
-                android:src="@drawable/app_icon_gp"
-                android:layout_below="@id/itemPriceHeader"
+                android:layout_width="@dimen/p2p_icon"
+                android:layout_height="@dimen/p2p_icon"
                 android:layout_marginStart="@dimen/p2p_icon"
                 android:layout_marginTop="@dimen/layout_margin_top"
-                android:contentDescription="@string/price_current"/>
+                android:contentDescription="@string/price_current"
+                android:src="@drawable/app_icon_gp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/itemPriceHeader" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/itemPrice"
-                android:layout_marginStart="@dimen/layout_margin_left"
-                android:layout_marginTop="@dimen/layout_margin_top"
-                android:layout_below="@id/itemPriceHeader"
-                android:layout_toEndOf="@id/gpIcon"
-                android:textColor="#ffffff"
-                android:textSize="@dimen/page_text_size" />
-
-            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/changes"
-                android:id="@+id/changes"
                 android:layout_marginStart="@dimen/layout_margin_left"
                 android:layout_marginTop="@dimen/layout_margin_top"
-                android:layout_below="@id/itemPrice"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/page_text_size"
+                app:layout_constraintStart_toEndOf="@id/gpIcon"
+                app:layout_constraintTop_toBottomOf="@id/itemPriceHeader" />
+
+            <TextView
+                android:id="@+id/changes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/layout_margin_left"
+                android:layout_marginTop="@dimen/layout_margin_top"
+                android:text="@string/changes"
                 android:textColor="@color/mainColour"
                 android:textSize="@dimen/page_text_size"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/itemPrice" />
 
             <ImageView
-                android:layout_width="@dimen/p2p_icon"
-                android:layout_height="@dimen/p2p_icon"
                 android:id="@+id/changeTodayTrend"
-                android:layout_below="@id/changes"
+                android:layout_width="@dimen/p2p_icon"
+                android:layout_height="@dimen/p2p_icon"
                 android:layout_marginStart="@dimen/p2p_icon"
                 android:layout_marginTop="@dimen/layout_margin_top"
-                android:contentDescription="@string/change_today"/>
+                android:contentDescription="@string/change_today"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/changes" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/changeToday"
-                android:layout_marginStart="@dimen/layout_margin_left"
-                android:layout_marginTop="@dimen/layout_margin_top"
-                android:layout_below="@id/changes"
-                android:layout_toEndOf="@id/changeTodayTrend"
-                android:textColor="#ffffff"
-                android:textSize="@dimen/page_text_size" />
-
-            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/layout_margin_left"
+                android:layout_marginTop="@dimen/layout_margin_top"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/page_text_size"
+                app:layout_constraintStart_toEndOf="@id/changeTodayTrend"
+                app:layout_constraintTop_toBottomOf="@id/changes" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/layout_margin_left"
+                android:layout_marginTop="@dimen/layout_margin_top"
                 android:text="@string/change_today"
-                android:layout_marginStart="@dimen/layout_margin_left"
-                android:layout_marginTop="@dimen/layout_margin_top"
-                android:layout_below="@id/changes"
-                android:layout_toEndOf="@id/changeToday"
                 android:textColor="#ffffff"
-                android:textSize="@dimen/page_text_size" />
+                android:textSize="@dimen/page_text_size"
+                app:layout_constraintStart_toEndOf="@id/changeToday"
+                app:layout_constraintTop_toBottomOf="@id/changes" />
 
             <ImageView
-                android:layout_width="@dimen/p2p_icon"
-                android:layout_height="@dimen/p2p_icon"
                 android:id="@+id/change1MonthTrend"
-                android:layout_below="@id/changeToday"
+                android:layout_width="@dimen/p2p_icon"
+                android:layout_height="@dimen/p2p_icon"
                 android:layout_marginStart="@dimen/p2p_icon"
                 android:layout_marginTop="@dimen/layout_margin_top"
-                android:contentDescription="@string/change_1_month"/>
+                android:contentDescription="@string/change_1_month"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/changeToday" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/change1Month"
-                android:layout_marginStart="@dimen/layout_margin_left"
-                android:layout_marginTop="@dimen/layout_margin_top"
-                android:layout_below="@id/changeToday"
-                android:layout_toEndOf="@id/change1MonthTrend"
-                android:textColor="#ffffff"
-                android:textSize="@dimen/page_text_size" />
-
-            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/layout_margin_left"
+                android:layout_marginTop="@dimen/layout_margin_top"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/page_text_size"
+                app:layout_constraintStart_toEndOf="@id/change1MonthTrend"
+                app:layout_constraintTop_toBottomOf="@id/changeToday" />
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/layout_margin_left"
+                android:layout_marginTop="@dimen/layout_margin_top"
                 android:text="@string/change_1_month"
-                android:layout_marginStart="@dimen/layout_margin_left"
-                android:layout_marginTop="@dimen/layout_margin_top"
-                android:layout_below="@id/changeToday"
-                android:layout_toEndOf="@id/change1Month"
                 android:textColor="#ffffff"
-                android:textSize="@dimen/page_text_size" />
+                android:textSize="@dimen/page_text_size"
+                app:layout_constraintStart_toEndOf="@id/change1Month"
+                app:layout_constraintTop_toBottomOf="@id/changeToday" />
 
             <ImageView
-                android:layout_width="@dimen/p2p_icon"
-                android:layout_height="@dimen/p2p_icon"
                 android:id="@+id/change3MonthTrend"
-                android:layout_below="@id/change1Month"
-                android:layout_marginStart="@dimen/p2p_icon"
-                android:layout_marginTop="@dimen/layout_margin_top"
-                android:contentDescription="@string/change_3_month"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/change3Month"
-                android:layout_marginStart="@dimen/layout_margin_left"
-                android:layout_marginTop="@dimen/layout_margin_top"
-                android:layout_below="@id/change1Month"
-                android:layout_toEndOf="@id/change3MonthTrend"
-                android:textColor="#ffffff"
-                android:textSize="@dimen/page_text_size" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/change_3_month"
-                android:layout_marginStart="@dimen/layout_margin_left"
-                android:layout_marginTop="@dimen/layout_margin_top"
-                android:layout_below="@id/change1Month"
-                android:layout_toEndOf="@id/change3Month"
-                android:textColor="#ffffff"
-                android:textSize="@dimen/page_text_size" />
-
-            <ImageView
                 android:layout_width="@dimen/p2p_icon"
                 android:layout_height="@dimen/p2p_icon"
-                android:id="@+id/change6MonthTrend"
-                android:layout_below="@id/change3Month"
                 android:layout_marginStart="@dimen/p2p_icon"
                 android:layout_marginTop="@dimen/layout_margin_top"
-                android:contentDescription="@string/change_6_month"/>
+                android:contentDescription="@string/change_3_month"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/change1Month" />
 
             <TextView
+                android:id="@+id/change3Month"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/layout_margin_left"
+                android:layout_marginTop="@dimen/layout_margin_top"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/page_text_size"
+                app:layout_constraintStart_toEndOf="@id/change3MonthTrend"
+                app:layout_constraintTop_toBottomOf="@id/change1Month" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/layout_margin_left"
+                android:layout_marginTop="@dimen/layout_margin_top"
+                android:text="@string/change_3_month"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/page_text_size"
+                app:layout_constraintStart_toEndOf="@id/change3Month"
+                app:layout_constraintTop_toBottomOf="@id/change1Month" />
+
+            <ImageView
+                android:id="@+id/change6MonthTrend"
+                android:layout_width="@dimen/p2p_icon"
+                android:layout_height="@dimen/p2p_icon"
+                android:layout_marginStart="@dimen/p2p_icon"
+                android:layout_marginTop="@dimen/layout_margin_top"
+                android:contentDescription="@string/change_6_month"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/change3Month" />
+
+            <TextView
                 android:id="@+id/change6Month"
-                android:layout_marginStart="@dimen/layout_margin_left"
-                android:layout_marginTop="@dimen/layout_margin_top"
-                android:layout_below="@id/change3Month"
-                android:layout_toEndOf="@id/change6MonthTrend"
-                android:textColor="#ffffff"
-                android:textSize="@dimen/page_text_size" />
-
-            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/change_6_month"
                 android:layout_marginStart="@dimen/layout_margin_left"
                 android:layout_marginTop="@dimen/layout_margin_top"
-                android:layout_below="@id/change3Month"
-                android:layout_toEndOf="@id/change6Month"
                 android:textColor="#ffffff"
-                android:textSize="@dimen/page_text_size" />
+                android:textSize="@dimen/page_text_size"
+                app:layout_constraintStart_toEndOf="@id/change6MonthTrend"
+                app:layout_constraintTop_toBottomOf="@id/change3Month" />
 
             <TextView
+                android:id="@+id/textView22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/layout_margin_left"
+                android:layout_marginTop="@dimen/layout_margin_top"
+                android:text="@string/change_6_month"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/page_text_size"
+                app:layout_constraintStart_toEndOf="@id/change6Month"
+                app:layout_constraintTop_toBottomOf="@id/change3Month" />
+
+            <TextView
+                android:id="@+id/alchPriceHeader"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/alch_prices"
-                android:id="@+id/alchPriceHeader"
-                android:layout_marginTop="10dp"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:layout_below="@id/change6Month"
+                android:layout_marginTop="10dp"
+                android:text="@string/alch_prices"
                 android:textColor="@color/mainColour"
                 android:textSize="@dimen/page_header_text_size"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/change6Month" />
 
             <ImageView
-                android:layout_width="@dimen/p2p_icon"
-                android:layout_height="@dimen/p2p_icon"
                 android:id="@+id/highalchIcon"
-                android:src="@drawable/app_icon_highalch"
-                android:layout_below="@id/alchPriceHeader"
-                android:layout_marginStart="@dimen/p2p_icon"
-                android:layout_marginTop="@dimen/layout_margin_top"
-                android:contentDescription="@string/high_alch"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/highAlch"
-                android:layout_marginStart="@dimen/layout_margin_left"
-                android:layout_marginTop="@dimen/layout_margin_top"
-                android:layout_below="@id/alchPriceHeader"
-                android:layout_toEndOf="@id/highalchIcon"
-                android:textColor="#ffffff"
-                android:textSize="@dimen/page_text_size" />
-
-            <ImageView
                 android:layout_width="@dimen/p2p_icon"
                 android:layout_height="@dimen/p2p_icon"
-                android:id="@+id/lowalchIcon"
-                android:src="@drawable/app_icon_lowalch"
-                android:layout_below="@id/highAlch"
-                android:layout_marginBottom="@dimen/layout_margin_bottom"
                 android:layout_marginStart="@dimen/p2p_icon"
                 android:layout_marginTop="@dimen/layout_margin_top"
-                android:contentDescription="@string/low_alch"/>
+                android:contentDescription="@string/high_alch"
+                android:src="@drawable/app_icon_highalch"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/alchPriceHeader" />
 
             <TextView
+                android:id="@+id/highAlch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/lowAlch"
-                android:layout_marginBottom="@dimen/layout_margin_bottom"
                 android:layout_marginStart="@dimen/layout_margin_left"
                 android:layout_marginTop="@dimen/layout_margin_top"
-                android:layout_below="@id/highAlch"
-                android:layout_toEndOf="@id/lowalchIcon"
                 android:textColor="#ffffff"
-                android:textSize="@dimen/page_text_size" />
+                android:textSize="@dimen/page_text_size"
+                app:layout_constraintStart_toEndOf="@id/highalchIcon"
+                app:layout_constraintTop_toBottomOf="@id/alchPriceHeader" />
 
-        </RelativeLayout>
+            <ImageView
+                android:id="@+id/lowalchIcon"
+                android:layout_width="@dimen/p2p_icon"
+                android:layout_height="@dimen/p2p_icon"
+                android:layout_marginStart="@dimen/p2p_icon"
+                android:layout_marginTop="@dimen/layout_margin_top"
+                android:layout_marginBottom="@dimen/layout_margin_bottom"
+                android:contentDescription="@string/low_alch"
+                android:src="@drawable/app_icon_lowalch"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/highAlch" />
+
+            <TextView
+                android:id="@+id/lowAlch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/layout_margin_left"
+                android:layout_marginTop="@dimen/layout_margin_top"
+                android:layout_marginBottom="@dimen/layout_margin_bottom"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/page_text_size"
+                app:layout_constraintStart_toEndOf="@id/lowalchIcon"
+                app:layout_constraintTop_toBottomOf="@id/highAlch" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

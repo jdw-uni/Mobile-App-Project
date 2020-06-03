@@ -67,5 +67,14 @@ Thursday 27/05/2020
 - Added Info text to News
 
 
+# WEEK 12
+
+Wednesday 3/06/2020
+- Final layout changes
+- Fixed issues and bugs
+- Completed Project Proposal
+- Completed video demonstration
+
+
 
 
